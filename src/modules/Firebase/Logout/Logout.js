@@ -1,0 +1,19 @@
+import React from 'react';
+import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+import firebase from 'firebase';
+import { logout } from '../../../state/auth';
+
+const auth = firebase.auth;
+
+export class Logout extends React.Component {
+  logoutClick = async () => {
+    const { dispatch } = this.props;
+    await auth().signOut();
+    dispatch(logout());
+  };
+
+  render = () => (<button onClick={this.logoutClick}>Logout</button>);
+}
+
+export default withRouter(connect()(Logout));
