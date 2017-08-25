@@ -6,6 +6,6 @@ export default (rootReducer) => {
   const enhancers = [];
 
   enhancers.push(applyMiddleware(...middleware));
-
-  return createStore(rootReducer, compose(...enhancers));
+  const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+  return createStore(rootReducer, composeEnhancers(...enhancers));
 };
