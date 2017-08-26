@@ -45,12 +45,15 @@ const processMetric = (metric_key, org_key, rate_increase) => {
   let metric_ref = Metrics.child(metric_key)
   metric_ref.once( 'value' )
   .then( metric => {
-    let metric_data = metric.val().org_totals[org_key]
-    if (!metric_data) {
+    let metric_data
+    if (!metric.val().org_totals) {
       metric_data = {
         num_pledges: 0,
         rate: 0
       }
+      metric_ref.child(`org_totals/${org_key}`).set({})
+    } else {
+      metric_data = metric.val().org_totals[org_key]
     }
     metric_ref.child(`org_totals/${org_key}/num_pledges`).set( metric_data.num_pledges + 1 )
     metric_ref.child(`org_totals/${org_key}/rate`).set( metric_data.rate + rate_increase )
@@ -71,6 +74,7 @@ exports.recomputePledgeTotal = functions.database.ref('/Metrics/{metricId}')
       // For each metric...
       Object.keys( metrics_data ).map( metric_key => {
         let metric_data = metrics_data[metric_key]
+        if( !metric_data.org_totals ) return // Skip metrics with no active pledges!
         Object.keys(metric_data.org_totals).map( org_key => {
           let org_rate = metric_data.org_totals[org_key].rate
           if( pledge_totals[org_key] ) {
