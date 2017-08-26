@@ -5,10 +5,13 @@ import { createSelector } from 'reselect';
 const reducerMountPoint = 'metrics';
 // ACTIONS
 export const ADD_METRIC_SUCCESS = 'ADD_METRIC_SUCCESS';
+export const UPDATE_METRIC_SUCCESS = 'UPDATE_METRIC_SUCCESS';
+
 // REDUCERS
 const byId = (state = {}, action) => {
   switch (action.type) {
-    case ADD_METRIC_SUCCESS: {
+    case ADD_METRIC_SUCCESS:
+    case UPDATE_METRIC_SUCCESS: {
       const entry = {};
       entry[action.value.id] = action.value;
       return {
@@ -35,6 +38,10 @@ export default combineReducers({
 });
 export const addMetric = (organization) => ({
   type: ADD_METRIC_SUCCESS,
+  value: organization,
+});
+export const updateMetric = (organization) => ({
+  type: UPDATE_METRIC_SUCCESS,
   value: organization,
 });
 const getMetricsIds = state => state[reducerMountPoint].ids;

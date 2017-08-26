@@ -5,8 +5,8 @@ import firebase from 'firebase';
 import { withRouter } from 'react-router-dom';
 import { login, logout } from '../../../ducks/auth';
 import config from './config';
-import { addOrganization } from '../../../ducks/organizations';
-import { addMetric } from '../../../ducks/metrics';
+import { addOrganization, updateOrganization } from '../../../ducks/organizations';
+import { addMetric, updateMetric } from '../../../ducks/metrics';
 import { addTransaction } from '../../../ducks/transactions';
 
 firebase.initializeApp(config);
@@ -32,8 +32,20 @@ class Init extends React.Component {
         ...(data.val()),
       }));
     });
+    organizationsRef.on('child_changed', (data) => {
+      dispatch(updateOrganization({
+        id: data.key,
+        ...(data.val()),
+      }));
+    });
     metricsRef.on('child_added', (data) => {
       dispatch(addMetric({
+        id: data.key,
+        ...(data.val()),
+      }));
+    });
+    metricsRef.on('child_changed', (data) => {
+      dispatch(updateMetric({
         id: data.key,
         ...(data.val()),
       }));
