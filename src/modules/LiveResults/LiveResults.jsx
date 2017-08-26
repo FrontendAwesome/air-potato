@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Dashboard = () => (
+const LiveResults = () => (
   <div>
     <h1>Dashboard</h1>
     <p>
@@ -12,4 +12,4 @@ const Dashboard = () => (
   </div>
 );
 
-export default Dashboard;
+export default LiveResults;
