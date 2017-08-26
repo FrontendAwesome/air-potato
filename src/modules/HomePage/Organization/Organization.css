@@ -38,6 +38,9 @@
   display: inline-block;
   margin: 0 calc(var(--margin-standard) / 2);
 }
+.organization__pledged {
+  opacity: 0.4;
+}
 
 .organization__donate {
   position: absolute;
