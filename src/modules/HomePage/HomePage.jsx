@@ -6,6 +6,7 @@ import Metric from '../../components/Metric';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getOrganizations } from '../../ducks/organizations';
+import { getMetrics } from '../../ducks/metrics';
 
 const HomePage = (props) => {
     const { organizations, metrics } = props;
@@ -38,8 +39,7 @@ HomePage.propTypes = {
 export default connect(
   state => ({
     organizations: getOrganizations(state),
-    metrics: state.examples.metrics,
+    metrics: getMetrics(state),
   }),
   null,
 )(HomePage);
-
