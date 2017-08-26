@@ -1,4 +1,5 @@
 import React from 'react';
+import { Map } from 'lodash';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import Organization from './Organization';
@@ -19,20 +20,20 @@ const HomePage = (props) => {
             Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
             Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
         </p>
-            {organizations.map((organization, index) => (
-                <Organization key={index} organization={ organization } />
+            {Object.keys(organizations).map((organizationKey, index) => (
+                <Organization key={index} organization={ organizations[organizationKey] } />
             ))}
         <h1>Metrics</h1>
-        {metrics.map((metric, index) => (
-            <Metric key={ index } metric={ metric } />
+        {Object.keys(metrics).map((metricKey, index) => (
+            <Metric key={ index } metric={ metrics[metricKey] } />
         ))}
         <Footer />
     </div>)
 };
 
 HomePage.propTypes = {
-    metrics: PropTypes.array.isRequired,
-    organizations: PropTypes.array.isRequired,
+    metrics: PropTypes.shape({}).isRequired,
+    organizations: PropTypes.shape({}).isRequired,
 };
 
 const mapStateToProps = state => ({
