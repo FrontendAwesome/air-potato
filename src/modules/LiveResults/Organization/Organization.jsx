@@ -1,15 +1,11 @@
 import React from 'react';
+import './Organization.css';
 
 const Organization = () => (
-  <div>
-    <h1>Organization</h1>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
-      Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
-      Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
-    </p>
-  </div>
+  <article className="live-organization">
+    <h2 className="live-organization__title">American Civil Liberties Union</h2>
+    <div className="live-organization__raised">$12,000</div>
+  </article>
 );
 
 export default Organization;

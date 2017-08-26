@@ -21,25 +21,13 @@
   }
 }
 
-
 @media (min-width: 900px) {
   .metric {
     flex-basis: 30%;
   }
 }
 
-.metric__unit {
-}
-
 .metric__value {
   font-size: 100px;
   font-weight: bold;
-}
-
-.metric__raised {
-
-}
-
-.metric__pledged {
-
 }
