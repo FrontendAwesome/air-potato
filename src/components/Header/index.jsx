@@ -24,9 +24,9 @@ class Header extends React.Component {
           Open Navigation
         </button>
         <nav className={`nav ${navToggle ? 'js-navToggle--active' : ''}`}>
-          <NavLink className="nav__item" to="/">About</NavLink>
-          <NavLink className="nav__item" to="/">Contact</NavLink>
-          <NavLink className="nav__item" to="/">Live Results</NavLink>
+          <NavLink className="nav__item" to="/about">About</NavLink>
+          <NavLink className="nav__item" to="/contact">Contact</NavLink>
+          <NavLink className="nav__item" to="/live-results">Live Results</NavLink>
           <NavLink className="nav__item nav__item--donate" to="/">Donate</NavLink>
         </nav>
       </header>

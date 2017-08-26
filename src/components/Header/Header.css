@@ -55,7 +55,7 @@
 
 @media (min-width: 700px) {
   .nav__item:last-child {
-    margin-right: 20px;
+    margin-right: var(--margin-standard);
   }
 }
 
