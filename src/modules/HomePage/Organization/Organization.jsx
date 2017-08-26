@@ -1,4 +1,5 @@
 import React from 'react';
+import './Organization.css';
 
 const Organization = (props) => {
   const { organization } = props;
@@ -17,7 +18,7 @@ const Organization = (props) => {
           <span className="organization__pledged--unit"> People</span>
         </div>
       </div>
-      <button type="button">Pledge or Donate Now</button>
+      <button type="button" className="organization__donate">Pledge or Donate Now</button>
     </article>
   )
 };

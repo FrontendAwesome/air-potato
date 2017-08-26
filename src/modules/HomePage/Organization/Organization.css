@@ -1,0 +1,73 @@
+.organization {
+  position: relative;
+  color: white;
+  background-color: var(--color-blue-medium);
+  margin: 10px 0;
+  padding: var(--margin-standard);
+  padding-right: 200px; /* Same as button width */
+}
+
+.organization__title {
+  margin: 0;
+  color: inherit;
+}
+
+.organization__below {
+  display: flex;
+}
+
+.organization__below > *:last-child {
+  margin-left: var(--margin-standard);
+}
+
+.organization__raised {
+
+}
+
+.organization__raised--amount {
+
+}
+
+.organization__raised--text {
+
+}
+
+.organization__pledged {
+
+}
+
+.organization__pledged--amount {
+
+}
+
+.organization__pledged--text {
+
+}
+
+.organization__pledged--count {
+
+}
+
+.organization__pledged--unit {
+
+}
+
+.organization__donate {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 200px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: var(--color-red-dark);
+  -webkit-appearance: none;
+  border: 0;
+  text-align: left;
+  font-size: 24px;
+  font-weight: bold;
+  color: inherit;
+  cursor: pointer;
+}
