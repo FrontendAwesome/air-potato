@@ -46,7 +46,7 @@ export class Donation extends React.Component {
               </div>
             </div>
         </section>
-        <button className="donate__donate-now" onClick={this.submitForm}>Donate Now!</button>
+        <button className="donation__donate-now" onClick={this.submitForm}>Donate Now!</button>
         <Footer />
       </div>
     )

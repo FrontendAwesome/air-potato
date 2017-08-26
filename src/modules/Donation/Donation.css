@@ -60,6 +60,12 @@
   transition: all .2s;
 }
 
+@media (min-width: 700px) {
+  .donation__donate-now {
+    margin-left: calc(50vw - 350px - 2%);
+  }
+}
+
 .donation__donate-now:hover {
   background-color: var(--color-red-dark);
 }
