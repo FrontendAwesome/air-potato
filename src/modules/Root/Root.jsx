@@ -7,7 +7,8 @@ import PrivateRoute from '../PrivateRoute';
 import { createStore } from '../../state';
 import FirebaseInit from '../Firebase/Init';
 import FirebaseAuthBar from '../Firebase/AuthBar';
-import Dashboard from '../Dashboard';
+import LiveRestuls from '../LiveResults';
+import HomePage from '../HomePage';
 import Admin from '../Admin';
 import NoMatch from '../NoMatch';
 import ExampleRedux from '../Examples/ExampleRedux';
@@ -30,7 +31,9 @@ export default function Root() {
           </div>
           <div>
             <Switch>
-              <Route exact path="/dashboard" component={Dashboard} />
+              <Route exact path="/" component={HomePage} />
+              <Route exact path="/liverestuls" component={LiveResults} />
+              <Route exact path="/liverestuls" component={LiveResults} />
               <PrivateRoute exact path="/admin" component={Admin} />
               <Route component={NoMatch} />
             </Switch>
