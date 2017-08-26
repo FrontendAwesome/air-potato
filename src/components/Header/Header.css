@@ -1,3 +1,39 @@
 .header {
+  display: flex;
+  align-items: center;
   background-color: var(--color-blue-dark);
+}
+
+.logo {
+  display: block;
+  width: 330px;
+  height: 100px;
+  text-indent: -9999px;
+  background-image: url("/logo.png");
+  background-size: 250px;
+  background-repeat: no-repeat;
+  background-position: -20px;
+
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.nav__item {
+  display: block;
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+}
+
+.nav__item:last-child {
+  margin-right: 20px;
+}
+
+.nav__item--donate {
+  padding: 10px 20px;
+  background-color: var(--color-red-light);
 }

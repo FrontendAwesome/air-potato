@@ -1,0 +1,26 @@
+.footer {
+  background-color: black;
+  color: var(--color-gray-light);
+  margin-left: -4%;
+  padding: var(--margin-standard) 0;
+  padding-left: 4%;
+  padding-right: 4%;
+  width: 108%;
+}
+
+@media (min-width: var(--site-max-width)) {
+  footer {
+    margin-left: calc((100% - var(--site-max-width) / 2 * -1));
+    padding-left: calc(var(--site-max-width) / 2));
+    padding-right: calc(var(--site-max-width) / 2));
+    width: 100%;
+  }
+}
+
+.footer a {
+  color: white;
+}
+
+.footer__inner {
+  text-align: center;
+}

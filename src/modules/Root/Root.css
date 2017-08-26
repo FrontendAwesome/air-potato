@@ -1,6 +1,7 @@
 *, *:before, *:after {
   box-sizing: border-box;
 }
+
 /* Variables */
 html {
   /* Blue */
@@ -17,16 +18,29 @@ html {
   /* Gray */
   --color-gray-dark: #333333;
   --color-gray-medium: #999999;
+  --color-gray-light: #cccccc;
+
+  /* Margins */
+  --margin-standard: 20px;
+
+  /* Widths */
+  --site-max-width: 1200px;
 }
 
 /* Layout */
 .container {
   width: 92%;
-  max-width: 1200px;
+  max-width: var(--site-max-width);
+  margin: 0 auto;
 }
 
 /* Typography */
-
 body {
+  margin: 0;
   font-family: helvetica, arial, sans-serif;
+  color: var(--color-gray-medium);
+}
+
+h1, h2, h3, h4 {
+  color: var(--color-gray-dark);
 }
