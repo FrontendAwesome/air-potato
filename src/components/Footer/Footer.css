@@ -9,7 +9,7 @@
 }
 
 @media (min-width: var(--site-max-width)) {
-  footer {
+  .footer {
     margin-left: calc((100% - var(--site-max-width) / 2 * -1));
     padding-left: calc(var(--site-max-width) / 2));
     padding-right: calc(var(--site-max-width) / 2));

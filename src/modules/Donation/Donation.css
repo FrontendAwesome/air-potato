@@ -1,8 +1,19 @@
+.donation-metric__wrapper {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
 .donation-metric {
   position: relative;
   display: flex;
   padding: var(--margin-standard);
   margin-bottom: var(--margin-standard);
+}
+
+.donation-metric__or {
+  text-align: center;
+  background: #eee;
+  padding: 10px;
 }
 
 .donation-metric__input {
@@ -45,7 +56,12 @@
   font-size: 30px;
   border: 0;
   margin-bottom: 100px;
+  cursor: pointer;
+  transition: all .2s;
+}
 
+.donation__donate-now:hover {
+  background-color: var(--color-red-dark);
 }
 
 

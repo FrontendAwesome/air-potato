@@ -24,7 +24,7 @@ export class Donation extends React.Component {
       <div>
         <Header />
         <h1>{organization.name}</h1>
-        <section>
+        <section className="donation-metric__wrapper">
           <p>Join {organization.total_transactions} other people who already pledged!</p>
           <hr />
           { metrics.map((metric, key) => (
@@ -37,7 +37,8 @@ export class Donation extends React.Component {
             </div>
           ))}
         </section>
-        <section className="donation__fixed">
+        <p className="donation-metric__or">Or</p>
+        <section className="donation-metric__wrapper donation-metric__wrapper--fixed">
           <div className="donation-metric">
             <span className="donation-metric__dollar">$</span><input value="0.00" type="text" className="donation-metric__input" name="fixed-donation" id="fixed-donation" />
               <div className="donation-metric__label">
