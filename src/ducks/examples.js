@@ -17,7 +17,7 @@ export const toggleCount = (toggleCount) => ({
 
 export const watchToggleCounterOn = (dispatch) => {
   const counterRef = firebase.database().ref('examples/toggleCounter');
-  counterRef.on('value', function(snapshot) {
+  counterRef.on('value', function (snapshot) {
     dispatch(toggleCount(snapshot.val()));
   });
 };
@@ -29,7 +29,7 @@ export const watchToggleCounterOff = () => {
 export const incrementToggleCounter = (dispatch) => {
   const counterRef = firebase.database().ref('examples/toggleCounter');
   let counter = null;
-  counterRef.once('value').then(function(snapshot) {
+  counterRef.once('value').then(function (snapshot) {
     counter = (snapshot.val() || 0) + 1;
   }).then(() => {
     if (counter !== null) {
@@ -43,8 +43,30 @@ export const incrementToggleCounter = (dispatch) => {
 export const INITIAL_STATE = {
   toggle: false,
   toggleCount: 0,
-  metrics: [{metric_unit: "Test Metric"}],
-  organizations: [{name: "Name"}],
+  organizations: {
+    org1: {
+      homepage_url: 'google.com',
+      logo_url: 'google.com/whatever',
+      money_earned: {
+        donations: 168.3,
+        pledges: 0,
+        total: 0
+      },
+      name: 'The Human Fund',
+      total_transactions: 8
+    }
+  },
+  metrics: {
+    metric_unit: 'Tiki Torch',
+    suggested_rate: 5,
+    total_metric_value: 0,
+    org_totals: {
+      org1: {
+        rate: 3.45,
+        num_pledges: 3
+      }
+    }
+  },
 };
 
 export default function reducer(state = INITIAL_STATE, action = {}) {
