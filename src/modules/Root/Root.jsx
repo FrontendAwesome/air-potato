@@ -3,14 +3,14 @@ import { Provider } from 'react-redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
-import PrivateRoute from '../PrivateRoute';
+import PrivateRoute from '../../components/PrivateRoute';
 import { createStore } from '../../state';
 import FirebaseInit from '../Firebase/Init';
 import FirebaseAuthBar from '../Firebase/AuthBar';
 import LiveResults from '../LiveResults';
 import HomePage from '../HomePage';
 import Admin from '../Admin';
-import NoMatch from '../NoMatch';
+import NoMatch from '../../components/NoMatch';
 import './Root.css';
 
 injectTapEventPlugin();
