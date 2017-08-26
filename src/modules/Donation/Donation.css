@@ -1,0 +1,51 @@
+.donation-metric {
+  position: relative;
+  display: flex;
+  padding: var(--margin-standard);
+  margin-bottom: var(--margin-standard);
+}
+
+.donation-metric__input {
+  border: solid 1px #cccccc;
+  padding: 10px 20px;
+  margin-right: var(--margin-standard);
+  font-size: 20px;
+}
+
+.donation-metric__dollar {
+  position: absolute;
+  left: 25px;
+  top: 25px;
+}
+
+.donation-metric__label {
+
+}
+
+.donation-metric__text {
+  font-size: 20px;
+  color: #666;
+}
+
+.donation-metric__suggested {
+  font-size: 12px;
+  color: #ccc;
+
+}
+
+.donation__fixed {
+
+}
+
+.donation__donate-now {
+  background-color: var(--color-red-light);
+  color: white;
+  -webkit-appearance: none;
+  padding: var(--margin-standard);
+  font-size: 30px;
+  border: 0;
+  margin-bottom: 100px;
+
+}
+
+

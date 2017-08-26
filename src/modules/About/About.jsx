@@ -1,16 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import * as fromTransaction from '../../ducks/transactions';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 
 const About = ({ createTransaction }) => (
   <div>
-    <h1>About</h1>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
-      Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
-      Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
-    </p>
+    <Header />
+
     <button
       onClick={() => {
         createTransaction({
@@ -20,6 +17,7 @@ const About = ({ createTransaction }) => (
     >
       Create
     </button>
+    <Footer />
   </div>
 );
 
