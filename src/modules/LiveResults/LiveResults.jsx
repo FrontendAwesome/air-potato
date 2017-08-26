@@ -20,6 +20,7 @@ const LiveResults = ({ organizations }) => (
 LiveResults.propTypes = {
   organizations: PropTypes.array.isRequired,
 };
+
 export default connect(
   state => ({
     organizations: getOrganizations(state),

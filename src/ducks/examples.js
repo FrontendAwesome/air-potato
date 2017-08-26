@@ -56,8 +56,8 @@ export const INITIAL_STATE = {
       total_transactions: 8
     }
   },
-  metrics: {
-    torch: {
+  metrics: [
+    {
       metric_unit: 'Tiki Torch',
       suggested_rate: 5,
       total_metric_value: 0,
@@ -68,7 +68,7 @@ export const INITIAL_STATE = {
         }
       }
     }
-  },
+  ],
 };
 
 export default function reducer(state = INITIAL_STATE, action = {}) {

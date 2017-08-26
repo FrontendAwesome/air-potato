@@ -1,13 +1,11 @@
 import React from 'react';
-import { Map } from 'lodash';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import Organization from './Organization';
 import Metric from '../../components/Metric';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
-
+import { getOrganizations } from '../../ducks/organizations';
 
 const HomePage = (props) => {
     const { organizations, metrics } = props;
@@ -20,27 +18,27 @@ const HomePage = (props) => {
             Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
             Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
         </p>
-            {Object.keys(organizations).map((organizationKey, index) => (
-                <Organization key={index} organization={ organizations[organizationKey] } />
+            {organizations.map((organization, index) => (
+                <Organization key={index} organization={ organization } />
             ))}
         <h1>Metrics</h1>
-        {Object.keys(metrics).map((metricKey, index) => (
-            <Metric key={ index } metric={ metrics[metricKey] } />
+        {metrics.map((metric, index) => (
+            <Metric key={ index } metric={ metric } />
         ))}
         <Footer />
     </div>)
 };
 
 HomePage.propTypes = {
-    metrics: PropTypes.shape({}).isRequired,
-    organizations: PropTypes.shape({}).isRequired,
+    metrics: PropTypes.array.isRequired,
+    organizations: PropTypes.array.isRequired,
 };
 
-const mapStateToProps = state => ({
+export default connect(
+  state => ({
+    organizations: getOrganizations(state),
     metrics: state.examples.metrics,
-    organizations: state.examples.organizations,
-});
+  }),
+  null,
+)(HomePage);
 
-export default withRouter(connect(
-    mapStateToProps,
-)(HomePage));
