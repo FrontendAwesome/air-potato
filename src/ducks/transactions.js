@@ -43,3 +43,4 @@ export const getTransactions = createSelector(
   [getTransactionsIds, getTransactionsById],
   (transactionsIds, transactionsById) => transactionsIds.map(id => transactionsById[id]),
 );
+export const getTransaction = (state, id) => state[reducerMountPoint].byId[id];
