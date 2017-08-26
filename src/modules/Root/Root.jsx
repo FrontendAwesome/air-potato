@@ -31,7 +31,7 @@ export default function Root() {
               <Route exact path="/" component={HomePage} />
               <Route exact path="/contact" component={Contact} />
               <Route exact path="/about" component={About} />
-              <Route exact path="/donation" component={Donation} />
+              <Route exact path="/donation/:organizationKey" component={Donation} />
               <Route exact path="/donation/thank-you" component={DonationThankYou} />
               <Route exact path="/live-results" component={LiveResults} />
               <PrivateRoute exact path="/admin" component={Admin} />
