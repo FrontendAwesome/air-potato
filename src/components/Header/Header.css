@@ -25,6 +25,7 @@
     padding: 10px;
     background-color: var(--color-blue-medium);
     transition: transform .2s;
+    z-index: 5;
   }
 
   .nav.js-navToggle--active {

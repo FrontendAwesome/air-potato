@@ -1,0 +1,45 @@
+.metric_wrapper {
+  margin: calc(var(--margin-standard) * 2) 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.metric {
+  flex-grow: 0;
+  flex-basis: 100%;
+  margin-bottom: var(--margin-standard);
+  background-color: var(--color-orange-light);
+  color: white;
+  padding: var(--margin-standard);
+  text-align: center;
+}
+
+@media (min-width: 500px) {
+  .metric {
+    flex-basis: 48%;
+  }
+}
+
+
+@media (min-width: 900px) {
+  .metric {
+    flex-basis: 30%;
+  }
+}
+
+.metric__unit {
+}
+
+.metric__value {
+  font-size: 100px;
+  font-weight: bold;
+}
+
+.metric__raised {
+
+}
+
+.metric__pledged {
+
+}

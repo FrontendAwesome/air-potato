@@ -30,7 +30,7 @@ html {
 
 /* Layout */
 .container {
-  width: 92%;
+  width: 96%;
   max-width: var(--site-max-width);
   margin: 0 auto;
 }

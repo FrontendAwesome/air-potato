@@ -1,11 +1,11 @@
 .footer {
   background-color: black;
   color: var(--color-gray-light);
-  margin-left: -4%;
+  margin-left: -2%;
   padding: var(--margin-standard) 0;
-  padding-left: 4%;
-  padding-right: 4%;
-  width: 108%;
+  padding-left: 2%;
+  padding-right: 2%;
+  width: 104%;
 }
 
 @media (min-width: var(--site-max-width)) {

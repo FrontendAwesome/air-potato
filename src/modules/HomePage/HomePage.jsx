@@ -21,10 +21,11 @@ const HomePage = (props) => {
             {organizations.map((organization, index) => (
                 <Organization key={index} organization={ organization } />
             ))}
-        <h1>Metrics</h1>
-        {metrics.map((metric, index) => (
-            <Metric key={ index } metric={ metric } />
-        ))}
+        <section className="metric_wrapper">
+          {metrics.map((metric, index) => (
+              <Metric key={ index } metric={ metric } />
+          ))}
+        </section>
         <Footer />
     </div>)
 };
