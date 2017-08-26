@@ -57,13 +57,15 @@ export const INITIAL_STATE = {
     }
   },
   metrics: {
-    metric_unit: 'Tiki Torch',
-    suggested_rate: 5,
-    total_metric_value: 0,
-    org_totals: {
-      org1: {
-        rate: 3.45,
-        num_pledges: 3
+    torch: {
+      metric_unit: 'Tiki Torch',
+      suggested_rate: 5,
+      total_metric_value: 0,
+      org_totals: {
+        org1: {
+          rate: 3.45,
+          num_pledges: 3
+        }
       }
     }
   },
