@@ -9,6 +9,7 @@ class Header extends React.Component {
       navToggle: false,
     };
   }
+
   render() {
     const { navToggle } = this.state;
     return (
