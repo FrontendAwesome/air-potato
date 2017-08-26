@@ -20,7 +20,7 @@ export default function Root() {
   return (
     <Provider store={store}>
       <BrowserRouter>
-        <div id="root">
+        <div className="container" id="root">
           <FirebaseInit />
           <div>
             <Switch>
@@ -30,6 +30,7 @@ export default function Root() {
               <Route component={NoMatch} />
             </Switch>
           </div>
+
           <FirebaseAuthBar />
         </div>
       </BrowserRouter>

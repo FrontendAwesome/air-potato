@@ -1,24 +1,32 @@
-.root {
-  text-align: center;
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+/* Variables */
+html {
+  /* Blue */
+  --color-blue-dark: #0F3E4D;
+  --color-blue-medium: #1A6F8C;
+
+  /* Red */
+  --color-red-light: #EF2E11;
+  --color-red-dark: #AD210C;
+
+  /* Orange */
+  --color-orange-light: #FAA014;
+
+  /* Gray */
+  --color-gray-dark: #333333;
+  --color-gray-medium: #999999;
 }
 
-.root-logo {
-  animation: root-logo-spin infinite 20s linear;
-  height: 80px;
+/* Layout */
+.container {
+  width: 92%;
+  max-width: 1200px;
 }
 
-.root-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
+/* Typography */
 
-.root-intro {
-  font-size: large;
-}
-
-@keyframes root-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+body {
+  font-family: helvetica, arial, sans-serif;
 }
