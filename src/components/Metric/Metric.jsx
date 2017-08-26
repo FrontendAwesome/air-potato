@@ -1,17 +1,21 @@
 import React from 'react';
+import './Metric.css';
 
 const Metric = (props) => {
   const { metric } = props;
   return (
-    <div>
-      <h1>{ metric.metric_unit }</h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
-        Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
-        Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
-      </p>
-    </div>
+    <article className="metric">
+      <div className="metric__unit">{ metric.metric_unit } Count</div>
+      <div className="metric__value">67</div>
+      <div className="metric__raised">
+        <span className="metric__raised--amount">$1,056</span>
+        <span className="metric__raised--text"> raised!</span>
+      </div>
+      <div className="metric__pledged">
+        <span className="metric__pledged--amount">$2,567</span>
+        <span className="metric__pledged--text"> pledged!</span>
+      </div>
+    </article>
   );
 };
 
