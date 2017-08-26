@@ -17,12 +17,24 @@ export class Donation extends React.Component {
         <section>
           <p>Join {organization.total_transactions} other people who already pledged!</p>
           <hr />
-          <ul>
           { metrics.map((metric, key) => (
-            <li></li>
+            <div>
+              $<input type="text" className="metric-item__input" />
+              <div className="metric-item__label">
+                <div className="metric-item__text">per tiki torch counted</div>
+                <div className="metric-item__suggested">$1.00 Suggested</div>
+              </div>
+            </div>
           ))}
-          </ul>
         </section>
+        <section className="donate__fixed">
+          $<input type="text" className="metric-item__input" />
+            <div className="metric-item__label">
+              <div className="metric-item__text">Donate Fixed Amount</div>
+              <div className="metric-item__suggested">$1.00 Suggested</div>
+            </div>
+        </section>
+        <button className="donate__donate-now">Donate Now!</button>
         <Footer />
       </div>
     )
