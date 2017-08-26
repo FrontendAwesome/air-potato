@@ -1,6 +1,8 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import * as fromTransaction from '../../ducks/transactions';
 
-const About = () => (
+const About = ({ createTransaction }) => (
   <div>
     <h1>About</h1>
     <p>
@@ -9,7 +11,22 @@ const About = () => (
       Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
       Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
     </p>
+    <button
+      onClick={() => {
+        createTransaction({
+          demo: 'test',
+        });
+      }}
+    >
+      Create
+    </button>
   </div>
 );
 
-export default About;
+// export default About;
+export default connect(
+  null,
+  {
+    createTransaction: fromTransaction.createTransaction,
+  },
+)(About);

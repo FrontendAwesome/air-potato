@@ -13,7 +13,7 @@ firebase.initializeApp(config);
 const database = firebase.database();
 const organizationsRef = database.ref('Organizations');
 const metricsRef = database.ref('Metrics');
-const transactionsRef = database.ref('Transactions');
+export const transactionsRef = database.ref('Transactions');
 firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL);
 
 class Init extends React.Component {
