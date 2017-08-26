@@ -2,9 +2,25 @@
   position: relative;
   color: white;
   background-color: var(--color-blue-medium);
-  margin: 10px 0;
+  margin: var(--margin-standard) 0;
   padding: var(--margin-standard);
-  padding-right: 200px; /* Same as button width */
+  padding-bottom: 80px;
+  transition: all .2s;
+}
+
+.organization:hover {
+  background-color: var(--color-blue-light);
+}
+
+.organization:hover .organization__donate {
+  background-color: var(--color-red-light);
+}
+
+@media (min-width: 700px) {
+  .organization {
+    padding: calc(var(--margin-standard) * 2);
+    padding-right: 200px; /* Same as button width */
+  }
 }
 
 .organization__title {
@@ -14,54 +30,25 @@
 
 .organization__below {
   display: flex;
+  opacity: 0.7;
 }
 
-.organization__below > *:last-child {
-  margin-left: var(--margin-standard);
-}
-
-.organization__raised {
-
-}
-
-.organization__raised--amount {
-
-}
-
-.organization__raised--text {
-
-}
-
-.organization__pledged {
-
-}
-
-.organization__pledged--amount {
-
-}
-
-.organization__pledged--text {
-
-}
-
-.organization__pledged--count {
-
-}
-
-.organization__pledged--unit {
-
+.organization__below > *:not(:last-child):after {
+  content: "|";
+  display: inline-block;
+  margin: 0 calc(var(--margin-standard) / 2);
 }
 
 .organization__donate {
   position: absolute;
-  right: 0;
-  top: 0;
-  width: 200px;
-  height: 100%;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 0 var(--margin-standard);
   background-color: var(--color-red-dark);
   -webkit-appearance: none;
   border: 0;
@@ -70,4 +57,15 @@
   font-weight: bold;
   color: inherit;
   cursor: pointer;
+}
+
+@media (min-width: 700px) {
+  .organization__donate {
+    bottom: auto;
+    left: auto;
+    right: 0;
+    top: 0;
+    width: 200px;
+    height: 100%;
+  }
 }
