@@ -43,3 +43,4 @@ export const getMetrics = createSelector(
   [getMetricsIds, getMetricsById],
   (metricsIds, metricsById) => metricsIds.map(id => metricsById[id]),
 );
+export const getMetric = (state, id) => state[reducerMountPoint].byId[id];
