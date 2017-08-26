@@ -51,7 +51,7 @@ const processMetric = (metric_key, org_key, rate_increase) => {
         num_pledges: 0,
         rate: 0
       }
-      metric_ref.child(`org_totals/${org_key}`).set({})
+      metric_ref.child(`org_totals/${org_key}`).set(metric_data)
     } else {
       metric_data = metric.val().org_totals[org_key]
     }
