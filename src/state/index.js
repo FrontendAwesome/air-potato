@@ -3,12 +3,14 @@ import configureStore from './CreateStore';
 import examples from '../ducks/examples';
 import auth from '../ducks/auth';
 import ui from '../ducks/ui';
+import organizations from '../ducks/organizations';
 
 export function createStore() {
   const rootReducer = combineReducers({
     examples,
     auth,
     ui,
+    organizations,
   });
 
   return configureStore(rootReducer);
