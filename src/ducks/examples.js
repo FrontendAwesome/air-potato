@@ -43,6 +43,8 @@ export const incrementToggleCounter = (dispatch) => {
 export const INITIAL_STATE = {
   toggle: false,
   toggleCount: 0,
+  metrics: [{metric_unit: "Test Metric"}],
+  organizations: [{name: "Name"}],
 };
 
 export default function reducer(state = INITIAL_STATE, action = {}) {

@@ -40,7 +40,6 @@ export default function Root() {
               <Route component={NoMatch} />
             </Switch>
           </div>
-
           <FirebaseAuthBar />
         </div>
       </BrowserRouter>
