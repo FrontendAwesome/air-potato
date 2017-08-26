@@ -6,7 +6,6 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 import PrivateRoute from '../../components/PrivateRoute';
 import { createStore } from '../../state';
 import FirebaseInit from '../Firebase/Init';
-import FirebaseAuthBar from '../Firebase/AuthBar';
 import LiveResults from '../LiveResults';
 import HomePage from '../HomePage';
 import Contact from '../Contact';
@@ -40,7 +39,7 @@ export default function Root() {
               <Route component={NoMatch} />
             </Switch>
           </div>
-          <FirebaseAuthBar />
+
         </div>
       </BrowserRouter>
     </Provider>

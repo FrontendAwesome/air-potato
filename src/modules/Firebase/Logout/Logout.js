@@ -13,7 +13,7 @@ export class Logout extends React.Component {
     dispatch(logout());
   };
 
-  render = () => (<button onClick={this.logoutClick}>Logout</button>);
+  render = () => (<button className="firebase__button firebase__button--logout" onClick={this.logoutClick}>Logout</button>);
 }
 
 export default withRouter(connect()(Logout));

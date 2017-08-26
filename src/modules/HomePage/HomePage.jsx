@@ -1,6 +1,8 @@
 import React from 'react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import Organization from './Organization';
+import Metric from '../../components/Metric';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
@@ -17,18 +19,13 @@ const HomePage = (props) => {
             Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
             Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
         </p>
-        <h1>organizations</h1>
-        <ul>
             {organizations.map((organization, index) => (
-                <li key={index}>{organization.name}</li>
+                <Organization key={index} organization={ organization } />
             ))}
-        </ul>
         <h1>Metrics</h1>
-        <ul>
         {metrics.map((metric, index) => (
-            <li key={index}>{metric.metric_unit}</li>
+            <Metric key={ index } metric={ metric } />
         ))}
-        </ul>
         <Footer />
     </div>)
 };

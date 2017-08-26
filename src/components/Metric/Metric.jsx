@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Raised = () => (
+const Metric = () => (
   <div>
-    <h1>Raised</h1>
+    <h1>Metric</h1>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
       Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
@@ -12,4 +12,4 @@ const Raised = () => (
   </div>
 );
 
-export default Raised;
+export default Metric;

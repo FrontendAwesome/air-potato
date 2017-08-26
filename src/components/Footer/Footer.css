@@ -24,3 +24,12 @@
 .footer__inner {
   text-align: center;
 }
+
+.firebase__button {
+  -webkit-appearance: none;;
+  display: inline;
+  background: none;
+  border: 0;
+  color: white;
+  font-size: inherit;
+}

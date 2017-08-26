@@ -11,7 +11,7 @@ export const loginClick = () => {
 };
 
 export class Login extends React.Component {
-  render = () => (<button onClick={loginClick}>Login</button>);
+  render = () => (<button className="firebase__button firebase__button--login" onClick={loginClick}>Login</button>);
 }
 
 export default withRouter(connect()(Login));
