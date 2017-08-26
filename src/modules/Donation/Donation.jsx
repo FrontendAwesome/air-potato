@@ -29,20 +29,19 @@ export class Donation extends React.Component {
           <hr />
           { metrics.map((metric, key) => (
             <div className="donation-metric" key={key}>
-              <span className="donation-metric__dollar">$</span><input type="text" className="donation-metric__input" name={key} id={key} />
+              <span className="donation-metric__dollar">$</span><input value="0.00" type="text" className="donation-metric__input" name={key} id={key} />
               <div className="donation-metric__label">
-                <div className="donation-metric__text">per tiki torch counted</div>
-                <div className="donation-metric__suggested">$1.00 Suggested</div>
+                <div className="donation-metric__text">per {metric.metric_unit}</div>
+                <div className="donation-metric__suggested">${metric.suggested_rate.toFixed(2)} Suggested</div>
               </div>
             </div>
           ))}
         </section>
         <section className="donation__fixed">
           <div className="donation-metric">
-            <span className="donation-metric__dollar">$</span><input type="text" className="donation-metric__input" name="fixed-donation" id="fixed-donation" />
+            <span className="donation-metric__dollar">$</span><input value="0.00" type="text" className="donation-metric__input" name="fixed-donation" id="fixed-donation" />
               <div className="donation-metric__label">
                 <div className="donation-metric__text">Donate Fixed Amount</div>
-                <div className="donation-metric__suggested">$1.00 Suggested</div>
               </div>
             </div>
         </section>
