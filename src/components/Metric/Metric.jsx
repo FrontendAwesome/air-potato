@@ -2,7 +2,6 @@ import React from 'react';
 
 const Metric = (props) => {
   const { metric } = props;
-  console.log('met', metric);
   return (
     <div>
       <h1>{ metric.metric_unit }</h1>

@@ -5,7 +5,7 @@ import './Footer.css';
 const Footer = () => (
   <footer className="footer">
     <div className="footer__inner">
-      Powered by an <a target="_blank" href="https://github.com/FrontendAwesome/air-potato">Air Potato</a>!
+      Powered by an <a target="_blank" rel="noopener noreferrer" href="https://github.com/FrontendAwesome/air-potato">Air Potato</a>!
       | <FirebaseAuthBar />
     </div>
   </footer>

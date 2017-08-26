@@ -6,10 +6,14 @@ import { withRouter } from 'react-router-dom';
 import { login, logout } from '../../../ducks/auth';
 import config from './config';
 import { addOrganization } from '../../../ducks/organizations';
+import { addMetric } from '../../../ducks/metrics';
+import { addTransaction } from '../../../ducks/transactions';
 
 firebase.initializeApp(config);
 const database = firebase.database();
 const organizationsRef = database.ref('Organizations');
+const metricsRef = database.ref('Metrics');
+const transactionsRef = database.ref('Transactions');
 firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL);
 
 class Init extends React.Component {
@@ -24,6 +28,18 @@ class Init extends React.Component {
     });
     organizationsRef.on('child_added', (data) => {
       dispatch(addOrganization({
+        id: data.key,
+        ...(data.val()),
+      }));
+    });
+    metricsRef.on('child_added', (data) => {
+      dispatch(addMetric({
+        id: data.key,
+        ...(data.val()),
+      }));
+    });
+    transactionsRef.on('child_added', (data) => {
+      dispatch(addTransaction({
         id: data.key,
         ...(data.val()),
       }));
