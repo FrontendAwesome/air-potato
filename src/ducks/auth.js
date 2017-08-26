@@ -1,6 +1,6 @@
 export const Types = {
-  LOGIN: 'air-potato/LOGIN',
-  LOGOUT: 'air-potato/LOGOUT',
+  LOGIN: 'auth/LOGIN',
+  LOGOUT: 'auth/LOGOUT',
 };
 
 export const login = user => ({

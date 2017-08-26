@@ -2,7 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import firebase from 'firebase';
-import { logout } from '../../../state/auth';
+import { logout } from '../../../ducks/auth';
 
 const auth = firebase.auth;
 

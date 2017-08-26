@@ -14,11 +14,9 @@ class AuthBar extends React.Component {
           <NavLink to="/admin" style={{marginLeft: "10px"}}>Admin</NavLink>
         </span>
       ) : (
-        <span>
-          <FirebaseLogin/>
-          <NavLink to="/dashboard" style={{marginLeft: "10px"}}>Dashboard</NavLink>
-        </span>
+        <FirebaseLogin/>
       )}
+      <NavLink to="/dashboard" style={{marginLeft: "10px"}}>Dashboard</NavLink>
     </div>
   );
 }

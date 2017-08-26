@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import firebase from 'firebase';
 import { withRouter } from 'react-router-dom';
-import { login, logout } from '../../../state/auth';
+import { login, logout } from '../../../ducks/auth';
 import config from './config';
 
 firebase.initializeApp(config);

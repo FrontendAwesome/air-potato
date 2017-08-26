@@ -3,13 +3,15 @@ import { Provider } from 'react-redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
-import PrivateRoute from '../../components/PrivateRoute';
+import PrivateRoute from '../PrivateRoute';
 import { createStore } from '../../state';
 import FirebaseInit from '../Firebase/Init';
 import FirebaseAuthBar from '../Firebase/AuthBar';
 import Dashboard from '../Dashboard';
 import Admin from '../Admin';
-import NoMatch from '../../components/NoMatch';
+import NoMatch from '../NoMatch';
+import ExampleRedux from '../Examples/ExampleRedux';
+import ExampleDatabase from '../Examples/ExampleDatabase';
 import logo from './logo.svg';
 import './Root.css';
 
@@ -34,6 +36,10 @@ export default function Root() {
             </Switch>
           </div>
           <FirebaseAuthBar />
+          <hr />
+          <h1>Examples</h1>
+          <ExampleRedux />
+          <ExampleDatabase />
         </div>
       </BrowserRouter>
     </Provider>
