@@ -3,17 +3,18 @@ import './Metric.css';
 
 const Metric = (props) => {
   const { metric } = props;
+  let rate_total = 0;
+  for( let [org_key, org] of Object.entries(metric.org_totals) ) {
+    rate_total += org.rate;
+  }
+  let total_raised = rate_total * metric.total_metric_value;
   return (
     <article className="metric">
-      <div className="metric__unit">{ metric.metric_unit } Count</div>
-      <div className="metric__value">67</div>
+      <div className="metric__unit">{ metric.metric_unit } Count: </div>
+      <div className="metric__value">{ metric.total_metric_value }</div>
       <div className="metric__raised">
-        <span className="metric__raised--amount">$1,056</span>
+        <span className="metric__raised--amount">${total_raised.toFixed(2)}</span>
         <span className="metric__raised--text"> raised!</span>
-      </div>
-      <div className="metric__pledged">
-        <span className="metric__pledged--amount">$2,567</span>
-        <span className="metric__pledged--text"> pledged!</span>
       </div>
     </article>
   );
