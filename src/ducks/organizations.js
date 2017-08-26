@@ -5,10 +5,13 @@ import { createSelector } from 'reselect';
 const reducerMountPoint = 'organizations';
 // ACTIONS
 export const ADD_ORGANIZATION_SUCCESS = 'ADD_ORGANIZATION_SUCCESS';
+export const UPDATE_ORGANIZATION_SUCCESS = 'UPDATE_ORGANIZATION_SUCCESS';
 // REDUCERS
 const byId = (state = {}, action) => {
   switch (action.type) {
-    case ADD_ORGANIZATION_SUCCESS: {
+    case ADD_ORGANIZATION_SUCCESS:
+    case UPDATE_ORGANIZATION_SUCCESS:
+     {
       const entry = {};
       entry[action.value.id] = action.value;
       return {
@@ -35,6 +38,10 @@ export default combineReducers({
 });
 export const addOrganization = (organization) => ({
   type: ADD_ORGANIZATION_SUCCESS,
+  value: organization,
+});
+export const updateOrganization = (organization) => ({
+  type: UPDATE_ORGANIZATION_SUCCESS,
   value: organization,
 });
 const getOrganizationsIds = state => state[reducerMountPoint].ids;
