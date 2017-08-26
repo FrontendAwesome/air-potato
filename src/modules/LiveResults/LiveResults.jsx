@@ -4,9 +4,19 @@ import { connect } from 'react-redux';
 import { getOrganizations } from '../../ducks/organizations';
 import { getMetrics } from '../../ducks/metrics';
 import { getTransactions } from '../../ducks/transactions';
+import Organization from './Organization';
+import Metric from '../../components/Metric';
 
 const LiveResults = ({ metrics, organizations, transactions }) => (
   <div>
+    {organizations.map((organization, index) => (
+      <Organization key={index} organization={ organization } />
+    ))}
+    <section className="metric_wrapper">
+      {metrics.map((metric, index) => (
+          <Metric key={ index } metric={ metric } />
+      ))}
+    </section>
     <h1>Dashboard</h1>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
