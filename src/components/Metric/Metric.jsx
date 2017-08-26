@@ -4,10 +4,13 @@ import './Metric.css';
 const Metric = (props) => {
   const { metric } = props;
   let rate_total = 0;
-  for( let [org_key, org] of Object.entries(metric.org_totals) ) {
-    rate_total += org.rate;
+  let total_raised = 0;
+  if( metric.org_totals ) {
+    for( let [org_key, org] of Object.entries(metric.org_totals) ) {
+      rate_total += org.rate;
+    }
+    total_raised = rate_total * metric.total_metric_value;
   }
-  let total_raised = rate_total * metric.total_metric_value;
   return (
     <article className="metric">
       <div className="metric__unit">{ metric.metric_unit } Count: </div>
