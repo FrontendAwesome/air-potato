@@ -43,3 +43,4 @@ export const getOrganizations = createSelector(
   [getOrganizationsIds, getOrganizationsById],
   (organizationsIds, organizationsById) => organizationsIds.map(id => organizationsById[id]),
 );
+export const getOrganization = (state, id) => state[reducerMountPoint].byId[id];
