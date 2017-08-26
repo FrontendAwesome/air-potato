@@ -7,7 +7,7 @@ import PrivateRoute from '../PrivateRoute';
 import { createStore } from '../../state';
 import FirebaseInit from '../Firebase/Init';
 import FirebaseAuthBar from '../Firebase/AuthBar';
-import LiveRestuls from '../LiveResults';
+import LiveResults from '../LiveResults';
 import HomePage from '../HomePage';
 import Admin from '../Admin';
 import NoMatch from '../NoMatch';
@@ -32,7 +32,6 @@ export default function Root() {
           <div>
             <Switch>
               <Route exact path="/" component={HomePage} />
-              <Route exact path="/liverestuls" component={LiveResults} />
               <Route exact path="/liverestuls" component={LiveResults} />
               <PrivateRoute exact path="/admin" component={Admin} />
               <Route component={NoMatch} />
