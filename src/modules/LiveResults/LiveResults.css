@@ -1,0 +1,11 @@
+.live-results-footer {
+  padding: var(--margin-standard);
+  background: black;
+  color: white;
+  text-align: center;
+  font-size: 40px;
+}
+
+.live-results-footer a {
+  color: white;
+}
