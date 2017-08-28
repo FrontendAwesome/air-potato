@@ -20,7 +20,7 @@ const HomePage = (props) => {
             Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
         </p>
             {organizations.map((organization, index) => (
-                <Organization key={index} organization={ organization } />
+                <Organization key={index} organization={ organization } metrics={ metrics } />
             ))}
         <section className="metric_wrapper">
           {metrics.map((metric, index) => (

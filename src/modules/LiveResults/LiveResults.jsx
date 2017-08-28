@@ -8,10 +8,10 @@ import Organization from './Organization';
 import Metric from '../../components/Metric';
 import './LiveResults.css';
 
-const LiveResults = ({ metrics, organizations, transactions }) => (
+const LiveResults = ({ metrics, organizations/*, transactions*/ }) => (
   <div>
     {organizations.map((organization, index) => (
-      <Organization key={index} organization={ organization } />
+      <Organization key={index} organization={ organization } metrics={ metrics } />
     ))}
     <section className="metric_wrapper">
       {metrics.map((metric, index) => (
@@ -26,14 +26,14 @@ const LiveResults = ({ metrics, organizations, transactions }) => (
 LiveResults.propTypes = {
   metrics: PropTypes.array.isRequired,
   organizations: PropTypes.array.isRequired,
-  transactions: PropTypes.array.isRequired,
+  //transactions: PropTypes.array.isRequired,
 };
 
 export default connect(
   state => ({
     metrics: getMetrics(state),
     organizations: getOrganizations(state),
-    transactions: getTransactions(state),
+    //transactions: getTransactions(state),
   }),
   null,
 )(LiveResults);
