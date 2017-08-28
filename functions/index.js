@@ -16,49 +16,36 @@ exports.processTransactions = functions.database.ref('/Transactions/{transactId}
   const transaction_data = event.data.val()
 
   //  Update metrics, if any
-  Object.keys(transaction_data.pledges).map( key => {
-    processMetric(key, transaction_data.org_key, transaction_data.pledges[key])
+  Object.keys(transaction_data.pledges).map( metric_key => {
+    Metrics.child(`${metric_key}/org_totals/${transaction_data.org_key}`)
+    .transaction( org_total => {
+      if ( org_total ) {
+        org_total.num_pledges += 1
+        org_total.rate += transaction_data.pledges[ metric_key ]
+      } else {
+        org_total = {
+          num_pledges: 1,
+          rate: transaction_data.pledges[ metric_key ]
+        }
+      }
+      return org_total
+    })
   })
 
-  //  Update organization
-  Organizations.child(transaction_data.org_key).once( 'value' )
-  .then( org => {
-    const org_data = org.val()
-
-    //  Update transaction count
-    org_data.total_transactions++
-    Organizations
-      .child(`${transaction_data.org_key}/total_transactions`)
-      .set( org_data.total_transactions )
-
-    //  Update donation $
-    org_data.money_earned.donations += transaction_data.donation
-    Organizations
-      .child(`${transaction_data.org_key}/money_earned/donations`)
-      .set( org_data.money_earned.donations )
+  //  Update Organization
+  Organizations.child(`${transaction_data.org_key}/total_transactions`)
+  .transaction( total_transactions => {
+    return (total_transactions || 0) + 1
   } )
+  if( transaction_data.donation ) {
+    Organizations.child(`${transaction_data.org_key}/money_earned/donations`)
+    .transaction( donations => {
+      return (donations || 0) + transaction_data.donation
+    } )
+  }
 
   return
 } )
-
-const processMetric = (metric_key, org_key, rate_increase) => {
-  let metric_ref = Metrics.child(metric_key)
-  metric_ref.once( 'value' )
-  .then( metric => {
-    let metric_data
-    if (!metric.val().org_totals) {
-      metric_data = {
-        num_pledges: 0,
-        rate: 0
-      }
-      metric_ref.child(`org_totals/${org_key}`).set(metric_data)
-    } else {
-      metric_data = metric.val().org_totals[org_key]
-    }
-    metric_ref.child(`org_totals/${org_key}/num_pledges`).set( metric_data.num_pledges + 1 )
-    metric_ref.child(`org_totals/${org_key}/rate`).set( metric_data.rate + rate_increase )
-  })
-}
 
 //  @brief  Anytime a Metric is updated, recalculate the contributions from all
 //          Metrics for all Organizations.
